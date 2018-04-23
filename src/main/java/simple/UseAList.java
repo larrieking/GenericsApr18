@@ -12,7 +12,8 @@ public class UseAList {
     E[] rv = (E[])Array.newInstance(cl, list.size()); // Right way :)
 //    E[] rv = (E[])new Object[list.size()]; // "heap pollution" because things are
     // not what they think they are.
-//    E[] rv = new Object[list.size()]; // type erasure "hides" E in the running system
+//    E[] rv = new Object[list.size()];  // "heap pollution"
+//    E[] rv = new E[list.size()]; // type erasure "hides" E in the running system
      // E literally only exists at compile time.
 
     return rv;
